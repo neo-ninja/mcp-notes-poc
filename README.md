@@ -6,6 +6,8 @@ The smallest MCP setup that shows the whole loop: a server with the three primit
 you -> [Claude] -> tool_use -> [MCP server] -> tool_result -> [Claude] -> answer
 ```
 
+Companion guide, interactive: **[MCP, wired up](https://neo-ninja.github.io/mcp-notes-poc/)**. A message player for four scenarios, a describe-a-tool lab that renders both wire formats live, a session simulator (stdio vs HTTP, memory vs database), two quizzes. The code here is the appendix to that guide.
+
 ## What it shows
 
 **The model never talks to MCP.** It sees a tool list and answers with a `tool_use` JSON block. The client (here `client.py`, in Claude Code it's Claude Code) turns that into a JSON-RPC `tools/call`, runs it, and feeds the result back. Claude Code's permission prompt sits exactly at that seam.
@@ -68,4 +70,4 @@ Inspect the server without any model: `npx @modelcontextprotocol/inspector .venv
 
 ## Deliberately not here
 
-SQLite persistence and an HTTP transport. Both are a few lines and neither changes the mental model.
+SQLite persistence and an HTTP transport. Both are a few lines and neither changes the mental model. The simulator in the guide covers what they'd change.
