@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "notes-poc": {
+      "type": "stdio",
+      "command": ".venv/Scripts/python.exe",
+      "args": ["server.py"],
+      "env": {}
+    }
+  }
+}
